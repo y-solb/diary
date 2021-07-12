@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Gamja Flower', cursive;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Gamja Flower';
+  src: url('./common/GamjaFlower-Regular.ttf');
+}
