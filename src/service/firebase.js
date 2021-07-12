@@ -1,9 +1,4 @@
-// Firebase App (the core Firebase SDK) is always required and must be listed first
-import firebase from 'firebase/app';
-
-// Add the Firebase products that you want to use
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -13,4 +8,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+export default firebaseApp;
