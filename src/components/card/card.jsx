@@ -28,6 +28,8 @@ const Card = ({ card }) => {
         return '/imgs/angry.png';
       case 'soso':
         return '/imgs/soso.png';
+      default:
+        throw new Error(`unknown feeling:${feeling}`);
     }
   }
 };
