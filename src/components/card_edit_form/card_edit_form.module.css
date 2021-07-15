@@ -1,0 +1,67 @@
+@value makerPink,makerLightYellow,makerGrey from '../../common/colors.css';
+
+.form {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  padding: 1rem 5rem;
+  background-color: makerLightYellow;
+  border: 2px solid makerPink;
+  border-radius: 1rem;
+}
+
+.date,
+.feeling {
+  flex: 1 1 50%;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid makerPink;
+  border-radius: 50%;
+  color: makerPink;
+  background-color: makerLightYellow;
+  font-size: 1.6rem;
+}
+
+.date,
+.feeling,
+.title {
+  margin: 0.8rem 0;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid makerGrey;
+  background-color: makerLightYellow;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.feeling,
+textarea {
+  width: 100%;
+  border: 2px solid makerGrey;
+  background-color: makerLightYellow;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contents {
+  min-height: 3rem;
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  outline: none;
+}

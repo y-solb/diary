@@ -1,0 +1,45 @@
+@value makerPink,makerLightYellow from '../../common/colors.css';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem 5rem;
+  background-color: makerLightYellow;
+  border: 2px solid makerPink;
+  border-radius: 1rem;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feeling {
+  width: 15%;
+  padding: 0.5rem 0;
+}
+
+.img {
+  width: 70%;
+  height: 60%;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.bottom {
+  margin: 1rem 0;
+}
+
+.date,
+.title,
+.contents {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
