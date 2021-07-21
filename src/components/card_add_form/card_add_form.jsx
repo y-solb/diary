@@ -21,7 +21,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       date: dateRef.current.value,
       feeling: feelingRef.current.value,
       fileName: file.fileName || '',
-      fileUrl: file.fileURL || '',
+      fileURL: file.fileURL || '',
       title: titleRef.current.value,
       contents: contentsRef.current.value,
     };

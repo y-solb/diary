@@ -4,6 +4,7 @@ import styles from './card.module.css';
 const Card = ({ card }) => {
   const { date, feeling, fileURL, title, contents } = card;
 
+  console.log(card);
   return (
     <li className={styles.card}>
       <div className={styles.top}>
