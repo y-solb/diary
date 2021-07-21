@@ -1,15 +1,13 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from './card_edit_form.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
-import ImageFileInput from '../image_file_input/image_file_input';
 
-const CardEditForm = ({ card, updateCard, deleteCard }) => {
-  const dateRef = useRef();
-  const feelingRef = useRef();
-  const titleRef = useRef();
-  const contentsRef = useRef();
+const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
+  const { date, feeling, fileName, title, contents } = card;
 
-  const { date, feeling, title, contents } = card;
+  const onFileChange = (file) => {
+    updateCard({ ...card, fileName: file.name, fileURL: file.url });
+  };
 
   const onChange = (event) => {
     if (event.currentTarget == null) {
@@ -23,14 +21,13 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
     <form className={styles.form}>
       <input
         type="text"
-        ref={dateRef}
         name="date"
         onChange={onChange}
         value={date}
         className={styles.date}
         placeholder="날짜"
       ></input>
-      <select ref={feelingRef} name="feeling" onChange={onChange} value={feeling} className={styles.feeling}>
+      <select name="feeling" onChange={onChange} value={feeling} className={styles.feeling}>
         <option value="happy">행복</option>
         <option value="soso">그냥저냥</option>
         <option value="sad">슬픔</option>
@@ -39,10 +36,9 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
       <button className={styles.deleteBtn} onClick={deleteCard}>
         X
       </button>
-      <ImageFileInput />
+      <FileInput name={fileName} onFileChange={onFileChange} />
       <input
         type="text"
-        ref={titleRef}
         name="title"
         onChange={onChange}
         value={title}
@@ -50,7 +46,6 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
         placeholder="제목"
       ></input>
       <TextareaAutosize
-        ref={contentsRef}
         name="contents"
         onChange={onChange}
         value={contents}

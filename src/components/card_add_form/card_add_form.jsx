@@ -1,14 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './card_add_form.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
-import ImageFileInput from '../image_file_input/image_file_input';
 
-const CardAddForm = ({ onAdd }) => {
+const CardAddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
   const dateRef = useRef();
   const feelingRef = useRef();
   const titleRef = useRef();
   const contentsRef = useRef();
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
+
+  const onFileChange = (file) => {
+    setFile({ fileName: file.name, fileURL: file.url });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -16,11 +20,14 @@ const CardAddForm = ({ onAdd }) => {
       id: Date.now(),
       date: dateRef.current.value,
       feeling: feelingRef.current.value,
+      fileName: file.fileName || '',
+      fileUrl: file.fileURL || '',
       title: titleRef.current.value,
       contents: contentsRef.current.value,
     };
-    formRef.current.reset();
     onAdd(card);
+    formRef.current.reset();
+    setFile({ fileName: null, fileURL: null });
   };
 
   return (
@@ -36,7 +43,7 @@ const CardAddForm = ({ onAdd }) => {
       <button className={styles.addBtn} onClick={onSubmit}>
         +
       </button>
-      <ImageFileInput />
+      <FileInput name={file.fileName} onFileChange={onFileChange} />
       <input type="text" ref={titleRef} name="title" className={styles.title} placeholder="제목"></input>
       <TextareaAutosize
         ref={contentsRef}

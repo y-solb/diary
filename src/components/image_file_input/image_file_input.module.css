@@ -1,0 +1,48 @@
+@value makerLightYellow,makerLightGrey,makerPink,makerGrey,makerBlack from '../../common/colors.css';
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  display: none;
+}
+
+.imgBtn {
+  width: 100%;
+  background-color: makerLightYellow;
+  border: 2px solid makerGrey;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.imgBtn.grey {
+  color: makerGrey;
+}
+
+.imgBtn:hover {
+  border: 2px solid makerBlack;
+  color: makerBlack;
+}
+
+.loading {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid makerLightGrey;
+  border-top: 2px solid makerPink;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
