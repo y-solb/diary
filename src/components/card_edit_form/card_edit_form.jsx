@@ -17,6 +17,10 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
     updateCard({ ...card, [event.currentTarget.name]: event.target.value });
   };
 
+  const onSubmit = () => {
+    deleteCard(card);
+  };
+
   return (
     <form className={styles.form}>
       <input
@@ -33,7 +37,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
         <option value="sad">슬픔</option>
         <option value="angry">화남</option>
       </select>
-      <button className={styles.deleteBtn} onClick={deleteCard}>
+      <button className={styles.deleteBtn} onClick={onSubmit}>
         X
       </button>
       <FileInput name={fileName} onFileChange={onFileChange} />
