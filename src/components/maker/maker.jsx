@@ -5,45 +5,32 @@ import Header from '../header/header';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
-const Maker = ({ FileInput, authService }) => {
-  const [cards, setCards] = useState({
-    1: {
-      id: '1',
-      date: '2021년 05월 08일',
-      feeling: 'happy',
-      fileName: 'sunnyDay',
-      fileURL: '/imgs/0508.png',
-      title: '날씨는 맑음',
-      contents: '오늘은 그러했다.',
-    },
-    2: {
-      id: '2',
-      date: '2021년 05월 09일',
-      feeling: 'sad',
-      fileName: 'rain',
-      fileURL: null,
-      title: '날씨는 비옴',
-      contents: '오늘은 무슨 일이?!',
-    },
-    3: {
-      id: '3',
-      date: '2021년 05월 10일',
-      feeling: 'angry',
-      fileName: 'rainbow',
-      fileURL: null,
-      title: '비 온 뒤 무지개',
-      contents: '내일은 오늘보다 좋길.',
-    },
-  });
+const Maker = ({ FileInput, authService, cardRepository }) => {
   const history = useHistory();
+  const historyState = history?.location?.state;
+
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     authService.logout();
   };
 
   useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = cardRepository.syncCards(userId, (cards) => {
+      setCards(cards);
+    });
+    return () => stopSync();
+  }, [userId]);
+
+  useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push('/');
       }
     });
@@ -55,14 +42,16 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
     setCards((cards) => {
       const updated = { ...cards };
-      delete [card.id];
+      delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
 
   return (
