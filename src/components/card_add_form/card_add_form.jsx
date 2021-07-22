@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import styles from './card_add_form.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
 
-const CardAddForm = ({ FileInput, onAdd }) => {
+const CardAddForm = memo(({ FileInput, onAdd }) => {
   const formRef = useRef();
   const dateRef = useRef();
   const feelingRef = useRef();
@@ -53,6 +53,6 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       ></TextareaAutosize>
     </form>
   );
-};
+});
 
 export default CardAddForm;

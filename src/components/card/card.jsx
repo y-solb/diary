@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './card.module.css';
 
-const Card = ({ card }) => {
+const Card = memo(({ card }) => {
   const { date, feeling, fileURL, title, contents } = card;
 
   return (
@@ -17,21 +17,20 @@ const Card = ({ card }) => {
       </div>
     </li>
   );
+});
 
-  function getFeeling(feeling) {
-    switch (feeling) {
-      case 'happy':
-        return '/imgs/happy.png';
-      case 'sad':
-        return '/imgs/sad.png';
-      case 'angry':
-        return '/imgs/angry.png';
-      case 'soso':
-        return '/imgs/soso.png';
-      default:
-        throw new Error(`unknown feeling:${feeling}`);
-    }
+function getFeeling(feeling) {
+  switch (feeling) {
+    case 'happy':
+      return '/imgs/happy.png';
+    case 'sad':
+      return '/imgs/sad.png';
+    case 'angry':
+      return '/imgs/angry.png';
+    case 'soso':
+      return '/imgs/soso.png';
+    default:
+      throw new Error(`unknown feeling:${feeling}`);
   }
-};
-
+}
 export default Card;
