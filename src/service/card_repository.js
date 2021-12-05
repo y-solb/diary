@@ -1,21 +1,25 @@
-import { firebaseDatabase } from './firebase';
+import { getDatabase, ref, onValue, off, set, remove } from 'firebase/database';
 
 class CardRepository {
+  constructor(app) {
+    this.db = getDatabase(app);
+  }
+
   syncCards(userId, onUpdate) {
-    const ref = firebaseDatabase.ref(`${userId}/cards`);
-    ref.on('value', (snapshot) => {
+    const cardRef = ref(this.db, `${userId}/cards`);
+    onValue(cardRef, (snapshot) => {
       const data = snapshot.val();
       data && onUpdate(data);
     });
-    return () => ref.off();
+    return () => off(cardRef);
   }
 
   saveCard(userId, card) {
-    firebaseDatabase.ref(`${userId}/cards/${card.id}`).set(card);
+    set(ref(this.db, `${userId}/cards/${card.id}`), card);
   }
 
   removeCard(userId, card) {
-    firebaseDatabase.ref(`${userId}/cards/${card.id}`).remove();
+    remove(ref(this.db, `${userId}/cards/${card.id}`));
   }
 }
 
