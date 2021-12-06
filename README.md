@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# 그림 일기장
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+오늘의 기분을 날씨로 표현하는 일기장
 
-## Available Scripts
+- 날씨 이모티콘을 이용하여 오늘의 기분 선택
+- Firebase Authentication를 이용하여 google 또는 github 계정으로 로그인 / 로그아웃이 가능
+- Firebase Realtime Database로 CRUD 구현
+- Firebse Hosting으로 배포
+- Cloudinary를 이용하여 업로드 된 이미지 사이즈를 resizing
+- React Router를 이용하여 페이지 이동
 
-In the project directory, you can run:
+## Tech Stack
 
-### `yarn start`
+- React
+- React Hooks
+- React Router
+- PostCSS
+- Firebase Realtime Database
+- Firebase Authentication
+- Firebase Hosting
+- Cloudinary
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Design
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+그림 일기장의 느낌을 위해 색연필로 제작
 
-### `yarn test`
+- 로고 이미지
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <img src="public/imgs/heart.png" width="50%" height="50%" title="hearts" alt="hearts"></img>
 
-### `yarn build`
+- 날씨 이모티콘
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <img src="public/imgs/happy.png" width="20%" height="20%" title="happy" alt="happy"></img>
+  <img src="public/imgs/soso.png" width="20%" height="20%" title="soso" alt="soso"></img>
+  <img src="public/imgs/sad.png" width="20%" height="20%" title="sad" alt="sad"></img>
+  <img src="public/imgs/angry.png" width="20%" height="20%" title="angry" alt="angry"></img>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo Link
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🔗https://business-card-maker-323bb.web.app/
