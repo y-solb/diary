@@ -1,4 +1,7 @@
 # 그림 일기장
+<img width="1483" alt="스크린샷 2022-04-03 오후 11 45 36" src="https://user-images.githubusercontent.com/59462108/161433880-b20f5064-7bde-45da-a3a0-4aaf42567646.png">
+
+<img width="1498" alt="스크린샷 2022-04-03 오후 11 52 35" src="https://user-images.githubusercontent.com/59462108/161433902-11b05085-3136-4d8e-ad51-ee1de9f5b65f.png">
 
 오늘의 기분을 날씨로 표현하는 일기장
 
@@ -38,7 +41,4 @@
   <img src="public/imgs/sad.png" width="20%" height="20%" title="sad" alt="sad"></img>
   <img src="public/imgs/angry.png" width="20%" height="20%" title="angry" alt="angry"></img>
 
-## Screenshot
-<img width="1483" alt="스크린샷 2022-04-03 오후 11 45 36" src="https://user-images.githubusercontent.com/59462108/161433880-b20f5064-7bde-45da-a3a0-4aaf42567646.png">
 
-<img width="1498" alt="스크린샷 2022-04-03 오후 11 52 35" src="https://user-images.githubusercontent.com/59462108/161433902-11b05085-3136-4d8e-ad51-ee1de9f5b65f.png">
