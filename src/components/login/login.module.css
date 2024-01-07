@@ -1,4 +1,5 @@
 @value makerLightYellow, makerGrey from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
 
 .login {
   width: 100%;
@@ -37,4 +38,10 @@
   color: makerLightYellow;
   background-color: makerGrey;
   border: 0;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .loginBtn {
+    width: 100%;
+  }
 }

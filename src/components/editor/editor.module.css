@@ -1,4 +1,5 @@
 @value makerGrey,makerLightGrey,makerWhite from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
 
 .editor {
   overflow-y: auto;
@@ -16,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 2rem;
 }
 
 .editor::-webkit-scrollbar {
@@ -30,4 +31,10 @@
   background-color: makerLightGrey;
   border-radius: 8px;
   box-shadow: inset 0px 0px 5px makerWhite;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .cards {
+    padding: 0 1.5rem;
+  }
 }

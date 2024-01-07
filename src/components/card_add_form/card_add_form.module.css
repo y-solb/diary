@@ -6,7 +6,7 @@
   width: 100%;
   flex-wrap: wrap;
   margin: 1rem 0;
-  padding: 1rem 5rem;
+  padding: 1rem 4rem;
   background-color: makerLightYellow;
   border: 2px solid makerPink;
   border-radius: 1rem;
@@ -19,15 +19,15 @@
 
 .addBtn {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
-  width: 2.8rem;
-  height: 2.8rem;
+  top: -1rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
   border: 2px solid makerPink;
   border-radius: 50%;
   color: makerPink;
   background-color: makerLightYellow;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .date,
